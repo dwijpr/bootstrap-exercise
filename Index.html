@@ -99,20 +99,37 @@
 
       <hr class="visible-md visible-lg" />
 
-      <section id="main" class="col-md-8 col-sm-9">
-
+      <section id="main" class="col-xs-12 col-md-5 col-lg-8">
 
         <p class="lead">Lebowski ipsum when will you find these guys?
           <em>I mean, do you have any promising leads?</em>Yeah, well,
           <strong>right man</strong>, there are many facets to this, uh, you know, many interested parties. If I can find your money, man— what's in it for the Dude? This compulsive fornicator is taking my father for the proverbial ride. Every time a rug is micturated upon in this fair city, I have to compensate.</p>
 
-        <img src="images/lebowski-1.jpg" alt="Bowling" class="pull-right img-thumbnail" />
+        <img
+          src="images/lebowski-1.jpg"
+          alt="Bowling"
+          class="pull-right img-thumbnail visible-xs visible-sm" />
+        <div class="text-center hidden-xs hidden-sm">
+          <img
+            src="images/lebowski-1.jpg"
+            alt="Bowling"
+            class="img-thumbnail" />
+        </div>
 
         <p>You know, little of this, little of that. Do you have any kalhua? I know how he likes to present himself; Father's weakness is vanity. Hence the slut. Please see him, Jeffrey. He's a good man. And thorough. They call Los Angeles the City of Angels. I didn't find it to be that exactly, but I'll allow as there are some nice folks there. 'Course, I can't say I seen London, and I never been to France, and I ain't never seen no queen in her damn undies as the fella says. But I'll tell you what, after seeing Los Angeles and thisahere story I'm about to unfold —wal, I guess I seen somethin' ever' bit as stupefyin' as ya'd see in any a those other places, and in English too, so I can die with a smile on my face without feelin' like the good Lord gypped me.</p>
 
         <p>One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. That wasn't her toe. Hello. Nein dizbatcher says zere iss problem mit deine kable. Dude, please!… Is this your homework, Larry? Yeah. Roadie for Metallica. Speed of Sound Tour. You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me.</p>
 
-        <img src="images/lebowski-3.jpg" alt="Rug" class="pull-right img-thumbnail" />
+        <img
+          src="images/lebowski-3.jpg"
+          alt="Bowling"
+          class="pull-right img-thumbnail visible-xs visible-sm" />
+        <div class="text-center hidden-xs hidden-sm">
+          <img
+            src="images/lebowski-3.jpg"
+            alt="Bowling"
+            class="img-thumbnail" />
+        </div>
 
         <p>Shomer shabbos. Ja, vee could really do it, Lebowski. We want that money, Lebowski. I spent most of my time occupying various, um, administration buildings, smoking thai-stick, breaking into the ROTC and bowling. These men are nihilists, Donny, nothing to be afraid of. Uh, yeah. Probably a vagrant, slept in the car. Or perhaps just used it as a toilet, and moved on. Stay out of Malibu, deadbeat!</p>
 
@@ -121,10 +138,20 @@
         <p>They're nihilists. Mr. Lebowski is in seclusion in the West Wing. Eight-year-olds, Dude. But that is up to little Larry here. Isn't it, Larry? I hope you're not avoiding this call because of the rug, which, I assure you, is not a problem. Who's in pyjamas, Walter? Za, okay, I bring mein toolz. The Knutsens. It's a wandering daughter job. Bunny Lebowski, man. Her real name is Fawn Knutsen. Her parents want her back.</p>
       </section>
 
-      <section id="sidebar" class="col-md-4 col-sm-3">
+      <section class="hidden-xs hidden-lg col-sm-12 col-md-3">
+        <div class="well">
+          <h1 class="text-center">
+            <i class="fa fa-arrow-down visible-xs visible-sm"></i>
+            <i class="fa fa-arrow-right hidden-xs hidden-sm"></i>
+          </h1>
+        </div>
+      </section>
+
+      <section id="sidebar" class="col-xs-12 col-md-4 col-lg-4">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h2 class="panel-title">Sidebar</h2>
+            <h2 class="panel-title hidden-xs hidden-sm">Sidebar</h2>
+            <h2 class="panel-title visible-xs visible-sm">Other Info</h2>
           </div>
           <div class="panel-body">
 
@@ -152,10 +179,10 @@
   <script src="js/site.js"></script>
   <script>
     $(function() {
-      setTimeout(function () {
+      // setTimeout(function () {
         $("#loading").hide();
         $("#page").removeClass('hidden');
-      }, 2000);
+      // }, 2000);
     });
   </script>
 </body>
