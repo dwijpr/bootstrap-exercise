@@ -9,6 +9,16 @@
   <link rel="stylesheet" href="css/amelia-bootstrap.min.css">
   <link rel="stylesheet" href="thirdparty/font-awesome-4.7.0/css/font-awesome.css">
   <link href="css/site.css" rel="stylesheet" />
+  <style>
+    body {
+      position: relative;
+    }
+    #sidebar .panel.panel-primary.affix {
+      top: 100px;
+      height: 80vh;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -99,7 +109,7 @@
 
       <hr class="visible-md visible-lg" />
 
-      <section id="main" class="col-xs-12 col-md-5 col-lg-8">
+      <section id="main" class="col-xs-12 col-md-7 col-lg-8">
 
         <p class="lead">Lebowski ipsum when will you find these guys?
           <em>I mean, do you have any promising leads?</em>Yeah, well,
@@ -138,16 +148,7 @@
         <p>They're nihilists. Mr. Lebowski is in seclusion in the West Wing. Eight-year-olds, Dude. But that is up to little Larry here. Isn't it, Larry? I hope you're not avoiding this call because of the rug, which, I assure you, is not a problem. Who's in pyjamas, Walter? Za, okay, I bring mein toolz. The Knutsens. It's a wandering daughter job. Bunny Lebowski, man. Her real name is Fawn Knutsen. Her parents want her back.</p>
       </section>
 
-      <section class="hidden-xs hidden-lg col-sm-12 col-md-3">
-        <div class="well">
-          <h1 class="text-center">
-            <i class="fa fa-arrow-down visible-xs visible-sm"></i>
-            <i class="fa fa-arrow-right hidden-xs hidden-sm"></i>
-          </h1>
-        </div>
-      </section>
-
-      <section id="sidebar" class="col-xs-12 col-md-4 col-lg-4">
+      <section id="sidebar" class="hidden-xs hidden-sm col-md-5 col-lg-4">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h2 class="panel-title hidden-xs hidden-sm">Sidebar</h2>
@@ -165,6 +166,7 @@
             <button class="btn btn-warning">More info...</button>
           </div>
         </div>
+        <div class="panel template" style="visibility: hidden;"></div>
       </section>
     </section>
     <hr />
@@ -178,11 +180,42 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/site.js"></script>
   <script>
+    (function( func ) {
+        $.fn.addClass = function() { // replace the existing function on $.fn
+            func.apply( this, arguments ); // invoke the original function
+            this.trigger('classChanged'); // trigger the custom event
+            return this; // retain jQuery chainability
+        }
+    })($.fn.addClass); // pass the original function as an argument
+    (function( func ) {
+        $.fn.removeClass = function() {
+            func.apply( this, arguments );
+            this.trigger('classChanged');
+            return this;
+        }
+    })($.fn.removeClass);
+
     $(function() {
       // setTimeout(function () {
         $("#loading").hide();
         $("#page").removeClass('hidden');
       // }, 2000);
+      $("#sidebar .panel.panel-primary").on('classChanged', function () {
+        if ($(this).hasClass('affix')) {
+          $(this).css({
+            width: $("#sidebar .panel.template").outerWidth()+'px',
+            overflowY: 'auto'
+          });
+        } else {
+          $(this).css({
+            width: 'auto',
+            overflowY: 'none'
+          });
+        }
+      });
+      $("#sidebar .panel.panel-primary").affix({
+        offset: {top: 520}
+      });
     });
   </script>
 </body>
