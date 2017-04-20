@@ -1,27 +1,14 @@
 ﻿body {
-  margin-top: 70px;
+    margin-top: 70px;
 }
-
-.table-responsive > .table
-{
-  background-color: transparent;
+.table-responsive > .table {
+    background-color: transparent;
 }
-
-.dropdown-menu > .disabled > a,
-.dropdown-menu > .disabled > a:focus,
-.dropdown-menu > .disabled > a:hover {
-  color: #999;
-}
-
-
 /*@import url(http://fonts.googleapis.com/css?family=Vollkorn:700italic);
-
-* {
-  font-family: sans-serif;
-}
 
 body {
   background: #ddd;
+  font-family: sans-serif;
 }
 
 #page {
